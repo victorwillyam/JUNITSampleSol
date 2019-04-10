@@ -13,7 +13,7 @@
 
 <property name="build.dir" location="build" />
 <property name="test.dir" location="${basedir}\test\sample" />
-<property name="classes.dir" location="${build.dir}\test\classes" />
+<property name="classes.dir" location="${build.dir}\test\classes\sample" />
 
  <path id="classpath">
         <pathelement location="lib\junit-4.10.jar" />

@@ -15,6 +15,9 @@
 <formatter type="plain" />
 <batchtest>
 <fileset dir = "${build.dir}">
+<!-- Make sure these two libraries are included -->
+		<classpath location="lib/junit.jar" />
+		<classpath location="lib/hamcrest-core-1.3.jar" />
 <include name="**/*Test.class"/>
 </fileset>
 </batchtest>

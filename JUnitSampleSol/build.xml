@@ -17,7 +17,7 @@
 <classpath location="lib/hamcrest-core-1.3.jar" />
 <formatter type="xml" />
 <batchtest>
-<fileset dir = "${build.dr}">
+<fileset dir = "${build.dir}">
 <include name="**/*Test.class"/>
 
 </fileset>

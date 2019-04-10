@@ -10,6 +10,24 @@
 <project name="JUnitSampleSol" default="default" basedir=".">
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
+ <!-- Class path definition-->
+    <path id="compile.classpath">
+        <pathelement path="${env.classpath}" />
+        <fileset dir="${lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+ 
+    <!-- junit Class path definition-->
+    <path id="junit.classpath">
+         
+        <fileset dir="${class.dir}">
+            <include name="**/*.class" />
+        </fileset>
+    </path>
+    
+    
+    
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->

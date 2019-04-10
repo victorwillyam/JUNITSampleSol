@@ -38,8 +38,8 @@
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
-
-<classpath location="${test.classes.dir}" />
+<classpath refid="classpath" />
+<!-- <classpath location="${test.classes.dir}" /> -->
 <formatter type="xml" />
 <batchtest todir="build/test/results">
 <fileset dir = "${test.dir}">

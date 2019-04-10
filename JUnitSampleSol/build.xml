@@ -31,7 +31,29 @@
         </fileset>
     </path>
     
-    
+ <!-- clean class -->
+    <target name="clean" description="Delete old build and dist directories">
+        <echo message="clean temporary file and directory" />
+        <delete>
+            <fileset dir="${class.dir}">
+                <include name="**/*.class" />
+            </fileset>
+        </delete>
+    </target>
+ 
+    <!-- compile java file -->
+    <target name="compile_targets" description="Compile Java sources" depends="clean">
+        <echo message="Compile all classes" />
+        <mkdir dir="${class.dir}" />
+        <javac srcdir="${src.dir}" destdir="${class.dir}">
+            <classpath refid="compile.classpath" />
+        </javac>
+ 
+        <copy todir="${class.dir}">
+            <fileset dir="${src.dir}" excludes="**/*.java" />
+        </copy>
+    </target>   
+ 
     
 <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
 <classpath>
@@ -40,14 +62,14 @@
        <pathelement location="${classes.dir}" />
 </classpath>
 </taskdef>  
-<target name="test" depends="compile" description="Execute unit tests">
-<junit printsummary="yes" >
+<target name="test" depends="compile_targets" description="Execute unit tests">
+<junit fork="yes" printsummary="yes" >
 <!-- Make sure these two libraries are included -->
 <classpath refid="junit.classpath" />
 <formatter type="xml" />
 <batchtest todir="build/test/results">
 <fileset dir = "${build.dir}">
-<include name="**/*Test"/>
+<include name="**/*Test.class"/>
 
 </fileset>
 </batchtest>

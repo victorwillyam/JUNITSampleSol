@@ -18,10 +18,9 @@
 <formatter type="plain" />
 <batchtest>
 <fileset dir = "${build.dir}">
-<!--<include name="**/*Test.class"/> -->
-<test name="**/*Test.class" haltonfailure="no" outfile="result">
-            <formatter type="xml" />
-</test>
+<include name="**/*Test.class"/>
+    <formatter type="xml" />
+
 </fileset>
 </batchtest>
 </junit>

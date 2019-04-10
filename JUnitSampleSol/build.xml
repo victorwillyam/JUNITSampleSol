@@ -13,7 +13,7 @@
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
-<classpath location="lib/junit.jar" />
+<classpath location="/var/lib/jenkins/plugins/junit/WEB-INF/lib/junit.jar" />
 <classpath location="lib/hamcrest-core-1.3.jar" />
 <formatter type="plain" />
 <batchtest>

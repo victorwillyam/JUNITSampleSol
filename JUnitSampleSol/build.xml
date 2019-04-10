@@ -13,7 +13,7 @@
 
  <property name="src.dir" value="src" />
     <property name="lib.dir" value="${basedir}/lib" />
-    <property name="class.dir" value="${basedir}/test/classes" />
+    <property name="class.dir" value="${basedir}/build/test/classes" />
  
     <!-- Class path definition-->
     <path id="compile.classpath">

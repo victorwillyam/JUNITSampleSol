@@ -24,7 +24,7 @@
     
  
 <target name="test" depends="compile" description="Execute unit tests">
-<junit printsummary="yes" >
+<junit printsummary="yes" haltonfailure="off" showoutput="yes">
 <!-- Make sure these two libraries are included -->
 <classpath>
      <pathelement location="lib\junit-4.10.jar" />
@@ -34,7 +34,7 @@
 </classpath>
 <!-- <classpath location="${test.classes.dir}" /> -->
 <formatter type="xml" />
-<batchtest todir="build/test/results">
+<batchtest fork="yes" todir="build/test/results">
 <fileset dir = "${test.dir}">
 <include name="**/*Test.java"/>
 

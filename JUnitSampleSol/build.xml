@@ -10,7 +10,7 @@
 <project name="JUnitSampleSol" default="default" basedir=".">
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
-<target name="test" depends="compileTest" description="Execute unit tests">
+<target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
 <classpath location="lib/junit-4.10.jar" />

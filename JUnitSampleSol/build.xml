@@ -10,7 +10,7 @@
 <project name="JUnitSampleSol" default="default" basedir=".">
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
-
+<property name="src.dir" location="src" />
 <property name="build.dir" location="build" />
 <property name="test.dir" location="${basedir}\test\sample" />
 <property name="classes.dir" location="${build.dir}\test\classes\sample" />

@@ -10,7 +10,7 @@
 <project name="JUnitSampleSol" default="default" basedir=".">
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
-
+<property name="test.dir" location="test/sample" />
  
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >

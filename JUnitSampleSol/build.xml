@@ -31,29 +31,7 @@
         </fileset>
     </path>
     
- <!-- clean class -->
-    <target name="clean" description="Delete old build and dist directories">
-        <echo message="clean temporary file and directory" />
-        <delete>
-            <fileset dir="${class.dir}">
-                <include name="**/*.class" />
-            </fileset>
-        </delete>
-    </target>
- 
-    <!-- compile java file -->
-    <target name="compile_targets" description="Compile Java sources" depends="clean">
-        <echo message="Compile all classes" />
-        <mkdir dir="${class.dir}" />
-        <javac srcdir="${src.dir}" destdir="${class.dir}">
-            <classpath refid="compile.classpath" />
-        </javac>
- 
-        <copy todir="${class.dir}">
-            <fileset dir="${src.dir}" excludes="**/*.java" />
-        </copy>
-    </target>   
- 
+    
     
 <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
 <classpath>
@@ -62,8 +40,8 @@
        <pathelement location="${classes.dir}" />
 </classpath>
 </taskdef>  
-<target name="test" depends="compile_targets" description="Execute unit tests">
-<junit fork="yes" printsummary="yes" >
+<target name="test" depends="compile" description="Execute unit tests">
+<junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
 <classpath refid="junit.classpath" />
 <formatter type="xml" />
@@ -76,11 +54,9 @@
 </junit>
 </target>
     <!--
-
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 
     before and after some main targets. They are: 
-
       -pre-init:                 called before initialization of project properties
       -post-init:                called after initialization of project properties
       -pre-compile:              called before javac compilation
@@ -94,24 +70,17 @@
       -pre-jar:                  called before JAR building
       -post-jar:                 called after JAR building
       -post-clean:               called after cleaning build products
-
     (Targets beginning with '-' are not intended to be called on their own.)
-
     Example of inserting an obfuscator after compilation could look like this:
-
         <target name="-post-compile">
             <obfuscate>
                 <fileset dir="${build.classes.dir}"/>
             </obfuscate>
         </target>
-
     For list of available properties check the imported 
     nbproject/build-impl.xml file. 
-
-
     Another way to customize the build is by overriding existing main targets.
     The targets of interest are: 
-
       -init-macrodef-javac:     defines macro for javac compilation
       -init-macrodef-junit:     defines macro for junit execution
       -init-macrodef-debug:     defines macro for class debugging
@@ -120,19 +89,15 @@
       run:                      execution of project 
       -javadoc-build:           Javadoc generation
       test-report:              JUnit report generation
-
     An example of overriding the target for project execution could look like this:
-
         <target name="run" depends="JUnitSampleSol-impl.jar">
             <exec dir="bin" executable="launcher.exe">
                 <arg file="${dist.jar}"/>
             </exec>
         </target>
-
     Notice that the overridden target depends on the jar target and not only on 
     the compile target as the regular run target does. Again, for a list of available 
     properties which you can use, check the target you are overriding in the
     nbproject/build-impl.xml file. 
-
     -->
 </project>

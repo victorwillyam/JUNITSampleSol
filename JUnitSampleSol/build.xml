@@ -31,13 +31,14 @@
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
-
+<taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
 <classpath>
        <pathelement location="lib/junit-4.10.jar" />
        <pathelement location="lib/ant-junit-1.9.14.jar" />
        <pathelement location="${classes.dir}" />
-</classpath>    
-
+</classpath>
+</taskdef>
+<classpath refid="junit.classpath" />
 <formatter type="xml" />
 <batchtest todir="build/test/results">
 <fileset dir = "${build.dir}">

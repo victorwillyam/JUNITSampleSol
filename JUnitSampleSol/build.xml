@@ -38,7 +38,11 @@
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
-<classpath refid="classpath" />
+<classpath>
+     <pathelement location="lib\junit-4.10.jar" />
+     <pathelement location="lib\ant-junit-1.9.14.jar" />
+     <pathelement location="${classes.dir}" />
+</classpath>
 <!-- <classpath location="${test.classes.dir}" /> -->
 <formatter type="xml" />
 <batchtest todir="build/test/results">

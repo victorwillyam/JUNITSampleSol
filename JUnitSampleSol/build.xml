@@ -19,7 +19,6 @@
 <batchtest>
 <fileset dir = "${build.dir}">
 <include name="**/*Test.class"/>
-    <formatter type="xml" />
 
 </fileset>
 </batchtest>

@@ -21,18 +21,7 @@
   </path>
 
 
- <target name="compile" depends="init">
-        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath">
  
- 
-            <classpath>
-                <pathelement location="lib\junit-4.10.jar" />
-                <pathelement location="lib\ant-junit-1.9.14.jar" />
-            </classpath> 
- 
- 
-        </javac>
-    </target>   
     
     
  

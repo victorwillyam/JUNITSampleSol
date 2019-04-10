@@ -25,7 +25,6 @@
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
 
-<classpath refid="junit.classpath" />
 <formatter type="xml" />
 <batchtest todir="build/test/results">
 <fileset dir = "${build.dir}">

@@ -18,7 +18,7 @@
 <formatter type="xml" />
 <batchtest>
 <fileset dir = "test/sample">
-<include name="**/*Test"/>
+<include name="**/*Test.class"/>
 
 </fileset>
 </batchtest>

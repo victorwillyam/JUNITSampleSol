@@ -10,21 +10,8 @@
 <project name="JUnitSampleSol" default="default" basedir=".">
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
- <!-- Class path definition-->
-    <path id="compile.classpath">
-        <pathelement path="${env.classpath}" />
-        <fileset dir="${lib.dir}">
-            <include name="*.jar" />
-        </fileset>
-    </path>
- 
-    <!-- junit Class path definition-->
-    <path id="junit.classpath">
-         
-        <fileset dir="${class.dir}">
-            <include name="**/*.class" />
-        </fileset>
-    </path>
+
+  
     
     
 <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">

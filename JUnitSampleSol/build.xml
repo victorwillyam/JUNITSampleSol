@@ -27,7 +27,7 @@
     </target>
     <target name="init" depends="clean">
         <mkdir dir="${build.dir}" />
-        <mkdir dir="${classes.dir}" />
+       
        
     </target>
 

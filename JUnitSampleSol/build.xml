@@ -20,7 +20,7 @@
 <formatter type="xml" />
 <batchtest todir="build/test/results">
 <fileset dir = "${build.dir}">
-<include name="**/*Test.class"/>
+<include name="**/*Test.java"/>
 
 </fileset>
 </batchtest>

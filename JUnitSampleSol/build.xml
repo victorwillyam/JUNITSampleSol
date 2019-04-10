@@ -20,8 +20,28 @@
         <pathelement location="lib\ant-junit-1.9.14.jar" />
   </path>
 
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        
+    </target>
+    <target name="init" depends="clean">
+        <mkdir dir="${build.dir}" />
+        <mkdir dir="${classes.dir}" />
+       
+    </target>
 
+  <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath">
  
+ 
+            <classpath>
+                <pathelement location="lib\junit-4.10.jar" />
+                <pathelement location="lib\ant-junit-1.9.14.jar" />
+            </classpath> 
+ 
+ 
+        </javac>
+    </target>  
     
     
  

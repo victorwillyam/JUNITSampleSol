@@ -11,7 +11,26 @@
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
 
-  
+ <property name="src.dir" value="src" />
+    <property name="lib.dir" value="${basedir}/lib" />
+    <property name="class.dir" value="${basedir}/test/classes" />
+ 
+    <!-- Class path definition-->
+    <path id="compile.classpath">
+        <pathelement path="${env.classpath}" />
+        <fileset dir="${lib.dir}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+ 
+    <!-- junit Class path definition-->
+    <path id="junit.classpath">
+         
+        <fileset dir="${class.dir}">
+            <include name="**/*.class" />
+        </fileset>
+    </path>
+    
     
     
 <taskdef name="junit" classname="org.apache.tools.ant.taskdefs.optional.junit.JUnitTask">
@@ -24,7 +43,7 @@
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
 <!-- Make sure these two libraries are included -->
-
+<classpath refid="junit.classpath" />
 <formatter type="xml" />
 <batchtest todir="build/test/results">
 <fileset dir = "${build.dir}">

@@ -17,7 +17,7 @@
 
  <path id="classpath">
         <pathelement location="lib\junit-4.10.jar" />
-        <pathelement location="lib\ant-junit-1.9.14.ja" />
+        <pathelement location="lib\ant-junit-1.9.14.jar" />
   </path>
 
 

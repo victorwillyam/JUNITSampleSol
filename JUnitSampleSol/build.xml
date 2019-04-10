@@ -19,7 +19,7 @@
 <classpath location="${test.classes.dir}" />
 <formatter type="xml" />
 <batchtest todir="build/test/results">
-<fileset dir = "${build.dir}">
+<fileset dir = "${test.dir}">
 <include name="**/*Test.java"/>
 
 </fileset>

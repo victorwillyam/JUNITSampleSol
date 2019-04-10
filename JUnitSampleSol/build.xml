@@ -10,6 +10,16 @@
 <project name="JUnitSampleSol" default="default" basedir=".">
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
+<target name="test" depends="compile" description="Execute unit tests">
+<junit printsummary="yes" >
+<formatter type="plain" />
+<batchtest>
+<fileset dir = "${build.dir}">
+<include name="**/*Test.class"/>
+</fileset>
+</batchtest>
+</junit>
+</target>
     <!--
 
     There exist several targets which are by default empty and which can be 

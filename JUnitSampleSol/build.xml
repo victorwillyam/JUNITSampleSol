@@ -11,6 +11,24 @@
     <description>Builds, tests, and runs the project JUnitSampleSol.</description>
     <import file="nbproject/build-impl.xml"/>
 <property name="test.dir" location="test/sample" />
+<property name="classes.dir" location="${build.dir}\classes\sample" />
+ 
+
+
+ <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath">
+ 
+ 
+            <classpath>
+                <pathelement location="lib\junit-4.10.jar" />
+                <pathelement location="lib\ant-junit-1.9.14.jar" />
+            </classpath> 
+ 
+ 
+        </javac>
+    </target>   
+    
+    
  
 <target name="test" depends="compile" description="Execute unit tests">
 <junit printsummary="yes" >
@@ -26,6 +44,7 @@
 </batchtest>
 </junit>
 </target>
+
     <!--
     There exist several targets which are by default empty and which can be 
     used for execution of your tasks. These targets are usually executed 

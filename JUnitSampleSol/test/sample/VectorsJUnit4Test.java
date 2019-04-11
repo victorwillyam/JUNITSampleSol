@@ -65,5 +65,46 @@ public class VectorsJUnit4Test {
        
     }
     
+  int a[]=null;
+  int b[]=null;  
     
+@Test (expected = IllegalArgumentException.class)
+public void illegalExcetptionthrown(){
+    
+    Vectors.scalarMultiplication(a, b);
+}
+
+@Test (expected = IllegalArgumentException.class)
+public void illegalExcetptionthrownforlength(){
+    
+    Vectors.scalarMultiplication(new int[]{0,1}, new int []{0,2,3});
+}
+
+@Test
+public void testvictor(){
+     Vectors v = new Vectors();
+    
+}
+
+@Test (expected = IllegalArgumentException.class)
+public void illegalExcetptionthrownforequals(){
+    Vectors.equal(a, b);
+}
+
+ @Test (expected = IllegalArgumentException.class)
+public void illegalExcetptionthrownforequalsOR(){
+    Vectors.equal(a, new int[]{0,1});
+}  
+@Test (expected = IllegalArgumentException.class)
+public void illegalExcetptionthrownforequalsOR2(){
+    Vectors.equal(new int[]{0,1},b);
+}  
+@Test (expected = IllegalArgumentException.class)
+public void illegalExcetptionthrownforequals1(){
+    Vectors.scalarMultiplication(a, new int[]{1,8,5});
+}
+@Test (expected = IllegalArgumentException.class)
+public void illegalExcetptionthrownforequals2(){
+    Vectors.scalarMultiplication(new int[]{1,8,5}, b);
+} 
 }
